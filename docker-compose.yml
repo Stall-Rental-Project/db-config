@@ -3,6 +3,8 @@ services:
     postgres:
         image: 'postgres:12-alpine'
         restart: unless-stopped
+        env_file:
+            - ./.env-docker
         environment: 
             - POSTGRES_USER=${DB_USER}
             - POSTGRES_PASSWORD=${DB_PASSWORD}
@@ -12,8 +14,6 @@ services:
             - "5432:5432"
         volumes: 
             - ./docker_postgres_init.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql
-        env_file:
-            - ./.env-docker
     pgadmin-compose:
         image: dpage/pgadmin4
         environment: 
