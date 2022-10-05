@@ -6,8 +6,8 @@ services:
         env_file:
             - ./.env-docker
         environment: 
-            - POSTGRES_USER=${DB_USER}
-            - POSTGRES_PASSWORD=${DB_PASSWORD}
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=123456
             - POSTGRES_MULTIPLE_DATABASES=mhmarketaccount,mhmarketrental,mhmarketconfig,mhmarketmarket
         container_name: postgresql-mh
         ports: 
