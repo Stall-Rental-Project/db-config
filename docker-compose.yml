@@ -14,18 +14,7 @@ services:
             - "5432:5432"
         volumes: 
             - ./docker_postgres_init.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql
-pgadmin-compose:
-    image: dpage/pgadmin4
-    environment: 
-        PGADMIN_DEFAULT_EMAIL: "hoanggg2110@gmail.com"
-        PGADMIN_DEFAULT_PASSWORD: "Giacbavanh@2110"
-    ports: 
-        - "16543:80"
-    depends_on: 
-        - postgres    
 networks:
     postgres-network:
         driver: bridge
 
-volumes:
-    postgres12:
