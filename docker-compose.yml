@@ -16,5 +16,5 @@ services:
             - ./docker_postgres_init.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql
 networks:
     postgres-network:
-        driver: bridge
+        driver: mhnetwork
 
